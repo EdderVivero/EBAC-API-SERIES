@@ -1,0 +1,250 @@
+// Header Components
+.header__logo-img {
+    @media screen and (max-width: 768px) {
+        order: 2;
+        img {
+            width: 60px;
+            height: 60px;
+        }
+    }
+
+    img {
+        position: relative;
+        width: 100px;
+        height: 100px;
+    }
+}
+
+.header__menu-open, .header__menu-close {
+    display: none;
+    background: none;
+    border: none;
+    color: $white;
+    font-size: 2rem;
+    cursor: pointer;
+
+    @media screen and (max-width: 768px) {
+        display: block;
+    }
+}
+
+.header__menu-open {
+    @media screen and (max-width: 768px) {
+        order: 1;
+    }
+}
+
+.header__nav {
+    display: flex;
+    gap: 10px;
+
+    a {
+        @include transition-standard;
+        text-decoration: none;
+        font-size: 1.2rem;
+        font-weight: bold;
+        padding: 5px;
+        color: $secondary-color;
+
+        &:hover {
+            color: $white;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 250px;
+        height: 100vh;
+        background-color: $secondary-color;
+        flex-direction: column;
+        padding: 60px 20px;
+        @include transition-standard;
+        z-index: 2000;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+
+        &--active {
+            right: 0;
+        }
+
+        .header__menu-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+        }
+
+        a {
+            color: $white;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba($white, 0.1);
+            width: 100%;
+        }
+    }
+}
+
+// Search Bar
+.search-bar {
+    display: flex;
+    gap: 10px;
+
+    @media screen and (max-width: 768px) {
+        order: 3;
+        width: 100%;
+        margin-top: 10px;
+        justify-content: center;
+    }
+
+    input {
+        padding: 5px;
+        border-radius: 12px;
+        border: none;
+        height: 30px;
+        @include flex-center;
+        width: 400px;
+        background-color: #fff;
+        @include transition-standard;
+
+        &:hover {
+            background-color: $white;
+            cursor: pointer;
+        }
+
+        &::placeholder {
+            color: $secondary-color;
+            font-size: 1rem;
+            text-align: center;
+            opacity: 0.5;
+        }
+
+        @media screen and (max-width: 768px) {
+            width: 100%;
+        }
+    }
+
+    button {
+        padding: 5px;
+        border-radius: 12px;
+        border: none;
+        width: 100px;
+        height: 25px;
+        @include flex-center;
+        background-color: $red-color;
+        color: $white;
+        font-size: 1rem;
+        font-weight: bold;
+        cursor: pointer;
+        @include transition-standard;
+
+        &:hover {
+            background-color: $white;
+            color: $primary-color;
+        }
+    }
+}
+
+// Messages
+.welcome-message {
+    text-align: center;
+    color: $white;
+    letter-spacing: 1.2px;
+    padding: 10px 10px;
+}
+
+// Fun Facts Section
+.fun-facts {
+    padding: 20px;
+
+    h2 {
+        @extend %text-title;
+        font-size: 2.3rem;
+        font-weight: 600;
+
+        @media screen and (max-width: 768px) {
+            font-size: 1.8rem;
+        }
+    }
+
+    h3 {
+        @extend %fun-facts-h3;
+    }
+
+    p {
+        @extend %fun-facts-p;
+    }
+
+    .card {
+        padding: 10px;
+        border: 1px $secondary-color;
+        @include transition-standard;
+
+        &:hover {
+            color: $primary-color;
+            transform: scale(1.05);
+        }
+    }
+
+    img {
+        width: 70%;
+        height: 70%;
+        margin: 0 auto;
+        border-radius: 12px;
+        display: block;
+
+        @media screen and (max-width: 768px) {
+            width: 100%;
+        }
+    }
+}
+
+// Dynamic Content (API)
+.dynamic-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+
+    .card-api {
+        background-color: lighten($secondary-color, 5%);
+        border-radius: 12px;
+        overflow: hidden;
+        @include transition-standard;
+        padding-bottom: 15px;
+
+        &:hover {
+            @include card-hover-effect(1.08);
+
+            p {
+                display: block;
+                overflow: visible;
+                -webkit-line-clamp: initial;
+                line-clamp: initial;
+            }
+        }
+
+        img {
+            width: 100%;
+            height: 350px;
+            object-fit: contain;
+            background-color: darken($secondary-color, 5%);
+        }
+
+        h3 {
+            @extend %fun-facts-h3;
+            font-size: 1.1rem;
+            padding: 10px;
+        }
+
+        p {
+            @extend %fun-facts-p;
+            font-size: 0.9rem;
+            padding: 0 10px;
+            margin: 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+    }
+}

@@ -1,0 +1,59 @@
+// Variables
+$primary-color: #1cc39c;
+$secondary-color: #1f1a1a;
+$white: #ffffff;
+$red-color: #ff0000;
+
+// Mixins
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin transition-standard {
+    transition: 0.3s ease-in-out;
+}
+
+@mixin card-hover-effect($scale: 1.05) {
+    transform: scale($scale) translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+    z-index: 10;
+    position: relative;
+    @include transition-standard;
+}
+
+// Extends / Placeholders
+%text-title {
+    color: $white;
+    letter-spacing: 1.2px;
+    padding: 10px 10px;
+    text-align: center;
+}
+
+%fun-facts-h3 {
+    @extend %text-title;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+%fun-facts-p {
+    color: $white;
+    letter-spacing: 1.2px;
+    padding: 10px 10px;
+    font-size: 1rem;
+    font-weight: 300;
+    text-align: justify;
+}
+
+// Resets
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    background-color: $secondary-color;
+}

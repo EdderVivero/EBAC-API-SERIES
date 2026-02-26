@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>El Pato Cinefilo</title>
+</head>
+
+<body>
+    <header class="header">
+        <picture class="header__logo-img">
+            <img src="img/iconoAPIMovies.png" alt="Logo">
+        </picture>
+        <button id="menu-open" class="header__menu-open">☰</button>
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Serie o Actor">
+            <button id="search-btn">Buscar</button>
+        </div>
+        <nav id="header-nav" class="header__nav">
+            <button id="menu-close" class="header__menu-close">✕</button>
+            <a href="index.html">Inicio</a>
+            <a href="#" id="nav-series">Top 10 Series</a>
+            <a href="#" id="nav-actors">Top 10 Actores</a>
+        </nav>
+    </header>
+    <main>
+        <div class="welcome-message">
+            <h1 class="welcome-message__title">Bienvenidos a la API de Peliculas y Series</h1>
+            <p class="welcome-message__message">Este es un sitio web en el que podran encontrar información valiosa e
+                interesante
+                sobre sus peliculas y series favoritas.
+                En el que además me permite prácticar mis cconocimientos adquiridos en el Bootcamp FullStack Python
+                hasta el momento.</p>
+        </div>
+
+        <section id="dynamic-content" class="dynamic-content">
+            <!-- Aqui se cargaran las tarjetas de la API -->
+        </section>
+
+        <section class="fun-facts">
+            <h2>Curiosidades</h2>
+            <div class="card">
+                <h3>🎭 Actores</h3>
+                <p>🎭 El actor mas joven en ganar un premio Oscar fue el niño de 11 años, Mickey Rourke, que ganó el
+                    premio
+                    por mejor actor por su papel en la película "The Godfather" en 1972.</p>
+                <p>🎭 La primera actriz en ganar un premio Oscar fue Katharine Hepburn en 1934 por su papel en la
+                    película
+                    "Morning Glory".</p>
+            </div>
+            <div class="card">
+                <h3>📺 Series</h3>
+                <p> 📺 La primer serie estrenada fue en el año 1941 titulada "The Queen Messenger" que consto de un solo
+                    episodio.</p>
+                <p> 📺 La primera serie animada de televisión fue Crusader Rabbit, creada por Jay Ward Productions y
+                    estrenada
+                    en 1950. </p>
+            </div>
+            <div class="card">
+                <h3>📽️ Directores</h3>
+                <p>📽️ El director Christopher Nolan es el director mas joven en ganar un premio Oscar por mejor
+                    director
+                    por su
+                    película "The Dark Knight" en 2010.</p>
+                <p>📽️ Ed Wood es considerado el peor director de Hollywood.</p>
+            </div>
+            <picture class="fun-facts__img">
+                <img src="https://imgs.search.brave.com/oXqEXgIZgXAfdaNPJL4lLZOVbL20BQxPBvkWWcl8nqU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jbGFu/ZGVzdGlub2RlYWN0/b3Jlcy5jb20vaW1h/Z2VzL2FydGljdWxv/cy9hY3RvcmVzMDAy/LmpwZw"
+                    alt="">
+            </picture>
+        </section>
+    </main>
+    <footer class="footer">
+        <p>&copy; 2026 El Pato Cinefilo - Bootcamp FullStack Python EBAC</p>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
